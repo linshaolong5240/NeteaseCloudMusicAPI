@@ -41,7 +41,7 @@ public struct NCMArtistIntroductionResponse: NCMResponse {
 }
 
 extension NCMArtistIntroductionResponse {
-    var desc: String {
+    public var desc: String {
         let introduction = introduction.map { item in
             "\(item.ti)\n\(item.txt)"
         }.joined(separator: "\n")
