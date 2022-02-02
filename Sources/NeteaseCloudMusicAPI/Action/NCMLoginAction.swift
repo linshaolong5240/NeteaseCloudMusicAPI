@@ -106,5 +106,5 @@ public struct NCMLoginResponse: NCMResponse {
 }
 
 extension NCMLoginResponse {
-    var userId: Int { profile.userId }
+    public var userId: Int { profile.userId }
 }

@@ -28,6 +28,13 @@ public struct NCMSearchInfo: Encodable {
     public var type: NCMSearchType
     public var limit: Int
     public var offset: Int
+    
+    public init(searchKey: String, type: NCMSearchType, limit: Int, offset: Int) {
+        self.s = searchKey
+        self.type = type
+        self.limit = limit
+        self.offset = offset
+    }
 }
 
 public struct NCMSearchSongAction: NCMAction {
