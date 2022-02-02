@@ -76,12 +76,22 @@ struct ContentView: View {
     }
 
     func asyncRequest() {
+        #if canImport(UIKit)
         if #available(iOS 15.0, *) {
             Task {
                 let result = await NCM.requestAsync(action: NCMPlaylistDetailAction(id: id))
                 print(result)
             }
         }
+        #endif
+        #if canImport(AppKit)
+        if #available(macOS 12.0, *) {
+            Task {
+                let result = await NCM.requestAsync(action: NCMPlaylistDetailAction(id: id))
+                print(result)
+            }
+        }
+        #endif
     }
     
     func rxswift() {

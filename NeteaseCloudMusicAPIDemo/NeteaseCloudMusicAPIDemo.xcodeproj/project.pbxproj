@@ -19,6 +19,10 @@
 		2B2B2B0A27AAB4840081534F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0927AAB4840081534F /* RxCocoa */; };
 		2B2B2B0C27AAB4840081534F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0B27AAB4840081534F /* RxRelay */; };
 		2B2B2B0E27AAB4840081534F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0D27AAB4840081534F /* RxSwift */; };
+		2BF5D31927AAC0950045A3D9 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF5D31827AAC0950045A3D9 /* RxSwift */; };
+		2BF5D31B27AAC0990045A3D9 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF5D31A27AAC0990045A3D9 /* RxBlocking */; };
+		2BF5D31D27AAC09C0045A3D9 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF5D31C27AAC09C0045A3D9 /* RxCocoa */; };
+		2BF5D31F27AAC09F0045A3D9 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2BF5D31E27AAC09F0045A3D9 /* RxRelay */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BF5D31F27AAC09F0045A3D9 /* RxRelay in Frameworks */,
+				2BF5D31927AAC0950045A3D9 /* RxSwift in Frameworks */,
+				2BF5D31B27AAC0990045A3D9 /* RxBlocking in Frameworks */,
+				2BF5D31D27AAC09C0045A3D9 /* RxCocoa in Frameworks */,
 				2B2B2ADF27AA86100081534F /* NeteaseCloudMusicAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +158,10 @@
 			name = "NeteaseCloudMusicAPIDemo (macOS)";
 			packageProductDependencies = (
 				2B2B2ADE27AA86100081534F /* NeteaseCloudMusicAPI */,
+				2BF5D31827AAC0950045A3D9 /* RxSwift */,
+				2BF5D31A27AAC0990045A3D9 /* RxBlocking */,
+				2BF5D31C27AAC09C0045A3D9 /* RxCocoa */,
+				2BF5D31E27AAC09F0045A3D9 /* RxRelay */,
 			);
 			productName = "NeteaseCloudMusicAPIDemo (macOS)";
 			productReference = 2B2B2AC727AA83DB0081534F /* NeteaseCloudMusicAPIDemo.app */;
@@ -529,6 +541,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		2BF5D31827AAC0950045A3D9 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		2BF5D31A27AAC0990045A3D9 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		2BF5D31C27AAC09C0045A3D9 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2BF5D31E27AAC09F0045A3D9 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
