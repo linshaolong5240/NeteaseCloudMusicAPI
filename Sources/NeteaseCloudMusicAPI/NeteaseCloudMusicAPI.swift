@@ -21,7 +21,7 @@ public class NeteaseCloudMusicAPI {
 
     public static let shared = NeteaseCloudMusicAPI()
     
-    public var requestHttpHeader = [ //"Accept": "*/*",
+    private var requestHttpHeader = [ //"Accept": "*/*",
         //"Accept-Encoding": "gzip,deflate,sdch",
         //"Connection": "keep-alive",
         "Content-Type": "application/x-www-form-urlencoded",

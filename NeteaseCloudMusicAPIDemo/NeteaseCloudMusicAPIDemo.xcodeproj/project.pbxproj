@@ -15,6 +15,10 @@
 		2B2B2ACF27AA83DB0081534F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B2ABC27AA83DB0081534F /* Assets.xcassets */; };
 		2B2B2ADD27AA854C0081534F /* NeteaseCloudMusicAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2ADC27AA854C0081534F /* NeteaseCloudMusicAPI */; };
 		2B2B2ADF27AA86100081534F /* NeteaseCloudMusicAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2ADE27AA86100081534F /* NeteaseCloudMusicAPI */; };
+		2B2B2B0827AAB4840081534F /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0727AAB4840081534F /* RxBlocking */; };
+		2B2B2B0A27AAB4840081534F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0927AAB4840081534F /* RxCocoa */; };
+		2B2B2B0C27AAB4840081534F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0B27AAB4840081534F /* RxRelay */; };
+		2B2B2B0E27AAB4840081534F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B2B2B0D27AAB4840081534F /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +28,7 @@
 		2B2B2AC127AA83DB0081534F /* NeteaseCloudMusicAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeteaseCloudMusicAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2B2AC727AA83DB0081534F /* NeteaseCloudMusicAPIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NeteaseCloudMusicAPIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B2B2AC927AA83DB0081534F /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		2B2B2ADA27AA848D0081534F /* NeteaseCloudMusicAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NeteaseCloudMusicAPI; path = ..; sourceTree = "<group>"; };
+		2B2B2AE527AAACD10081534F /* NeteaseCloudMusicAPI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = NeteaseCloudMusicAPI; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,7 +36,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2B2B0A27AAB4840081534F /* RxCocoa in Frameworks */,
 				2B2B2ADD27AA854C0081534F /* NeteaseCloudMusicAPI in Frameworks */,
+				2B2B2B0E27AAB4840081534F /* RxSwift in Frameworks */,
+				2B2B2B0C27AAB4840081534F /* RxRelay in Frameworks */,
+				2B2B2B0827AAB4840081534F /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +96,7 @@
 		2B2B2AD827AA83FA0081534F /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				2B2B2ADA27AA848D0081534F /* NeteaseCloudMusicAPI */,
+				2B2B2AE527AAACD10081534F /* NeteaseCloudMusicAPI */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -118,6 +126,10 @@
 			name = "NeteaseCloudMusicAPIDemo (iOS)";
 			packageProductDependencies = (
 				2B2B2ADC27AA854C0081534F /* NeteaseCloudMusicAPI */,
+				2B2B2B0727AAB4840081534F /* RxBlocking */,
+				2B2B2B0927AAB4840081534F /* RxCocoa */,
+				2B2B2B0B27AAB4840081534F /* RxRelay */,
+				2B2B2B0D27AAB4840081534F /* RxSwift */,
 			);
 			productName = "NeteaseCloudMusicAPIDemo (iOS)";
 			productReference = 2B2B2AC127AA83DB0081534F /* NeteaseCloudMusicAPIDemo.app */;
@@ -170,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 2B2B2AB427AA83D90081534F;
+			packageReferences = (
+				2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 2B2B2AC227AA83DB0081534F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -475,6 +490,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		2B2B2ADC27AA854C0081534F /* NeteaseCloudMusicAPI */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -483,6 +509,26 @@
 		2B2B2ADE27AA86100081534F /* NeteaseCloudMusicAPI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NeteaseCloudMusicAPI;
+		};
+		2B2B2B0727AAB4840081534F /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		2B2B2B0927AAB4840081534F /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		2B2B2B0B27AAB4840081534F /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		2B2B2B0D27AAB4840081534F /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B2B2B0627AAB4840081534F /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
