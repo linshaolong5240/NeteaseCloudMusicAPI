@@ -2,7 +2,7 @@
 //  NeteaseCloudMusicAPI.swift
 //  Qin
 //
-//  Created by 林少龙 on 2020/5/1.
+//  Created by teenloong on 2020/5/1.
 //  Copyright © 2022 com.teenloong. All rights reserved.
 //
 import Foundation

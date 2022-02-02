@@ -2,7 +2,7 @@
 //  NCMMVDetailAction.swift
 //  Qin
 //
-//  Created by 林少龙 on 2021/6/7.
+//  Created by teenloong on 2021/6/7.
 //  Copyright © 2022 com.teenloong. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  NCMCloudUploadCheckAction.swift
 //  Qin
 //
-//  Created by 林少龙 on 2021/7/11.
+//  Created by teenloong on 2021/7/11.
 //  Copyright © 2022 com.teenloong. All rights reserved.
 //
 
