@@ -1,6 +1,6 @@
 //
 //  NCMUserCloudAction.swift
-//  Qin (macOS)
+//  NeteaseCloudMusicAPI (macOS)
 //
 //  Created by teenloong on 2021/7/8.
 //  Copyright © 2022 com.teenloong. All rights reserved.

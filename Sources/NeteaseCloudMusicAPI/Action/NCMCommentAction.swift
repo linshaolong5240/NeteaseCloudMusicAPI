@@ -1,6 +1,6 @@
 //
 //  NCMCommentAction.swift
-//  Qin
+//  NeteaseCloudMusicAPI
 //
 //  Created by teenloong on 2021/6/9.
 //

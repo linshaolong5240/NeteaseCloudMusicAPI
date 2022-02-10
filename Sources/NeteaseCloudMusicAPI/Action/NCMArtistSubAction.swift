@@ -1,6 +1,6 @@
 //
 //  NCMArtistSubAction.swift
-//  Qin
+//  NeteaseCloudMusicAPI
 //
 //  Created by teenloong on 2021/6/6.
 //  Copyright © 2022 com.teenloong. All rights reserved.

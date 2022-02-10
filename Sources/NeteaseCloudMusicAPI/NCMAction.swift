@@ -1,6 +1,6 @@
 //
 //  NCMAction.swift
-//  Qin
+//  NeteaseCloudMusicAPI
 //
 //  Created by teenloong on 2022/1/31.
 //  Copyright © 2022 com.teenloong. All rights reserved.
