@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "RxNeteaseCloudMusicAPI",
+        "repositoryURL": "https://github.com/linshaolong5240/RxNeteaseCloudMusicAPI",
+        "state": {
+          "branch": "main",
+          "revision": "3896b53cc91436aecfc949237220dfe2d1217430",
+          "version": null
+        }
+      },
+      {
         "package": "RxSwift",
         "repositoryURL": "https://github.com/ReactiveX/RxSwift",
         "state": {

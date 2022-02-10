@@ -7,6 +7,7 @@
 
 import SwiftUI
 import NeteaseCloudMusicAPI
+import RxNeteaseCloudMusicAPI
 import Combine
 import RxSwift
 
