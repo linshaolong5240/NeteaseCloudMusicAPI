@@ -132,21 +132,23 @@ public class NeteaseCloudMusicAPI {
         let request = makeRequest(action: action)
         
         let task = URLSession.shared.dataTask(with: request) { responseData, response, error in
-            guard error == nil else {
-                completion(.failure(error!))
-                return
-            }
-            
-            guard let data = responseData, !data.isEmpty else {
-                completion(.success(nil))
-                return
-            }
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(.failure(error!))
+                    return
+                }
+                
+                guard let data = responseData, !data.isEmpty else {
+                    completion(.success(nil))
+                    return
+                }
 
-            do {
-                let model = try JSONDecoder().decode(action.responseType, from: data)
-                completion(.success(model))
-            } catch let error {
-                completion(.failure(error))
+                do {
+                    let model = try JSONDecoder().decode(action.responseType, from: data)
+                    completion(.success(model))
+                } catch let error {
+                    completion(.failure(error))
+                }
             }
         }
         task.resume()
