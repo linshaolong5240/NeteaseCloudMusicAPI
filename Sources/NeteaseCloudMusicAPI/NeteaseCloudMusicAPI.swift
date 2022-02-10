@@ -21,7 +21,7 @@ public class NeteaseCloudMusicAPI {
 
     public static let shared = NeteaseCloudMusicAPI()
     
-    private var requestHttpHeader = [ //"Accept": "*/*",
+    public var requestHttpHeader = [ //"Accept": "*/*",
         //"Accept-Encoding": "gzip,deflate,sdch",
         //"Connection": "keep-alive",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -99,7 +99,7 @@ public class NeteaseCloudMusicAPI {
         return "params=\(encText!)&encSecKey=\(encSecKey)".plusSymbolToPercent()
     }
     
-    private func makeRequest<Action: NCMAction>(action: Action) -> URLRequest {
+    public func makeRequest<Action: NCMAction>(action: Action) -> URLRequest {
         let url: String =  action.host + action.uri
         if let headers = action.headers {
             requestHttpHeader.merge(headers) { current, new in
