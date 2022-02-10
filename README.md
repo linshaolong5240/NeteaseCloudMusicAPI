@@ -69,11 +69,11 @@ NCM.requestObserver(action: NCMPlaylistDetailAction(id: id)).subscribe { respons
 * NCMCommentAction
 * NCMCommentLikeAction
 * NCMCommentSongAction
-* NCMLoginActio
+* NCMLoginAction
 * NCMLoginRefreshAction
 * NCMLogoutAction
 * NCMMVDetailAction
-* NCMMVURLActio
+* NCMMVURLAction
 * NCMPlaylistCategoriesAction
 * NCMPlaylistCategoryListAction
 * NCMPlaylistCreateAction
