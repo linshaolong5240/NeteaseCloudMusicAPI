@@ -41,8 +41,10 @@ Task {
     let result = await NCM.requestAsync(action: NCMPlaylistDetailAction(id: id))
     print(result)
 }
-
-//RxSwift 6.0.0+
+```
+## RxSwift Support
+* https://github.com/linshaolong5240/RxNeteaseCloudMusicAPI
+```Swift
 NCM.requestObserver(action: NCMPlaylistDetailAction(id: id)).subscribe { response in
     print(response)
 } onFailure: { error in
