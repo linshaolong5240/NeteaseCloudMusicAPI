@@ -30,7 +30,7 @@ public struct NCMCloudUploadTokenAction: NCMAction {
 }
 
 public struct CloudUploadTokenResponse: NCMResponse {
-    public struct Result: Codable {
+    public struct Result: Codable, Equatable {
         public var bucket: String
         public var docId: String
         public var objectKey: String

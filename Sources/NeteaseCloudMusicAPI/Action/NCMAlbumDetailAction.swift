@@ -22,18 +22,18 @@ public struct NCMAlbumDetailAction: NCMAction {
 
 public struct NCMAlbumDetailResponse: NCMResponse {
 
-    public struct AlbumSong: Codable {
-        public struct Album: Codable {
+    public struct AlbumSong: Codable, Equatable {
+        public struct Album: Codable, Equatable {
             public var id: Int
             public var name: String
             public var pic: Int
             public var pic_str: String
         }
-        public struct AlbumSongArtist: Codable {
+        public struct AlbumSongArtist: Codable, Equatable {
             public var id: Int
             public var name: String
         }
-        public struct Quality: Codable {
+        public struct Quality: Codable, Equatable {
             var br: Int
             var fid: Int
             var size: Int

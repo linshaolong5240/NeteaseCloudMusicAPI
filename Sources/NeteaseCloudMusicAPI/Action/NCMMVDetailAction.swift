@@ -25,8 +25,8 @@ public struct NCMMVDetailAction: NCMAction {
 }
 
 public struct NCMMVDetailResponse: NCMResponse {
-    public struct MVData: Codable {
-        public struct Br: Codable {
+    public struct MVData: Codable, Equatable {
+        public struct Br: Codable, Equatable {
             public var br, point, size: Int
         }
         public var artistId: Int
@@ -48,7 +48,7 @@ public struct NCMMVDetailResponse: NCMResponse {
         public var shareCount, subCount: Int
 //        public var videoGroup: [Any]
     }
-    public struct MP: Codable {
+    public struct MP: Codable, Equatable {
         var cp, dl, fee, id: Int
 //        var msg: Any?
         var mvFee: Int

@@ -21,8 +21,8 @@ public struct NCMArtistHotSongsAction: NCMAction {
 }
 
 public struct NCMArtistHotSongsResponse: NCMResponse {
-    public struct HotSong: Codable {
-        public struct Quality: Codable {
+    public struct HotSong: Codable, Equatable {
+        public struct Quality: Codable, Equatable {
             public var bitrate: Int
             public var dfsId: Int
             public var `extension`: String

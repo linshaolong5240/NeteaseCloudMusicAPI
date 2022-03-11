@@ -34,7 +34,7 @@ public struct NCMLoginAction: NCMAction {
 }
 
 public struct NCMLoginResponse: NCMResponse {
-    public struct Account: Codable {
+    public struct Account: Codable, Equatable {
         public var anonimousUser: Bool
         public var ban: Int
         public var baoyueVersion: Int
@@ -50,7 +50,7 @@ public struct NCMLoginResponse: NCMResponse {
         public var viptypeVersion: Int
         public var whitelistAuthority: Int
     }
-    public struct Binding: Codable {
+    public struct Binding: Codable, Equatable {
         public var bindingTime: Int
         public var expired: Bool
         public var expiresIn: Int
@@ -61,7 +61,7 @@ public struct NCMLoginResponse: NCMResponse {
         public var url: String
         public var userId: Int
     }
-    public struct Profile: Codable {
+    public struct Profile: Codable, Equatable {
         public var accountStatus: Int
         public var authority: Int
         public var authStatus: Int

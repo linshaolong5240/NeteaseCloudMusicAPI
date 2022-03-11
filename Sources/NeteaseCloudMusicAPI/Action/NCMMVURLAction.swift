@@ -26,7 +26,7 @@ public struct NCMMVURLAction: NCMAction {
 }
 
 public struct NCMMVURLResponse: NCMResponse {
-    public struct MVURLData: Codable {
+    public struct MVURLData: Codable, Equatable {
         public var code: Int
         public var expi: Int
         public var fee: Int

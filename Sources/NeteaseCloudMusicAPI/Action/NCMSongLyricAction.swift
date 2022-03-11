@@ -28,7 +28,7 @@ public struct NCMSongLyricAction: NCMAction {
 }
 
 public struct NCMSongLyricResponse: NCMResponse {
-    public struct Lyric: Codable {
+    public struct Lyric: Codable, Equatable {
         public var lyric: String
         public var version: Int
     }

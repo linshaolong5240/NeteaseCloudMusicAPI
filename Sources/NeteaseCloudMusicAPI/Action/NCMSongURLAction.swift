@@ -30,7 +30,7 @@ public struct NCMSongURLAction: NCMAction {
 }
 
 public struct NCMSongURLResponse: NCMResponse {
-    public struct SongData: Codable {
+    public struct SongData: Codable, Equatable {
         public var br: Int
         public var canExtend: Bool
         public var code: Int

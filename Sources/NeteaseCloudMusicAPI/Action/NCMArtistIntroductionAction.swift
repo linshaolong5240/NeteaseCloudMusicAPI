@@ -25,11 +25,11 @@ public struct NCMArtistIntroductionAction: NCMAction {
 }
 
 public struct NCMArtistIntroductionResponse: NCMResponse {
-    public struct Introduction: Codable {
+    public struct Introduction: Codable, Equatable {
         public var ti: String
         public var txt: String
     }
-    public struct TopicData: Codable {
+    public struct TopicData: Codable, Equatable {
         
     }
     public var briefDesc: String

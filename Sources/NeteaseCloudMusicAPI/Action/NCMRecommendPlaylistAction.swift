@@ -20,7 +20,7 @@ public struct NCMRecommendPlaylistAction: NCMAction {
 }
 
 public struct NCMRecommendPlaylistResponse: NCMResponse {
-    public struct RecommendPlaylist: Codable {
+    public struct RecommendPlaylist: Codable, Equatable {
         public var alg, copywriter: String
         public var createTime: Int
         public var creator: NCMCrteatorResponse?

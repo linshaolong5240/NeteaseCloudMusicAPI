@@ -29,8 +29,8 @@ public struct NCMArtistMVAction: NCMAction {
 }
 
 public struct NCMArtistMVResponse: NCMResponse {
-    public struct MV: Codable {
-        public struct Artist: Codable {
+    public struct MV: Codable, Equatable {
+        public struct Artist: Codable, Equatable {
             public var albumSize: Int
             public var alias: [String]
             public var briefDesc: String

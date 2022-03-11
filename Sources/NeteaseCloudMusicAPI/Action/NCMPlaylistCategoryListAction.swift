@@ -9,7 +9,7 @@
 import Foundation
 //获取歌单分类
 public struct NCMPlaylistCategoryListAction: NCMAction {
-    public enum Order: String, Codable {
+    public enum Order: String, Codable, Equatable {
         case hot, new
     }
     

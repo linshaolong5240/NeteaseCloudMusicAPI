@@ -9,7 +9,7 @@
 import Foundation
 //创建歌单
 public struct NCMPlaylistCreateAction: NCMAction {
-    public enum Privacy: Int, Codable {
+    public enum Privacy: Int, Codable, Equatable {
         case common = 0
         case privacy = 10
     }

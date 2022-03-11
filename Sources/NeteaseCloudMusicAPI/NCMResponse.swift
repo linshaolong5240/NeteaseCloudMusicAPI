@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol NCMResponse: Codable {
+public protocol NCMResponse: Codable, Equatable {
     var code: Int { get }
     var message: String? { get }
 }
@@ -17,17 +17,17 @@ public extension NCMResponse {
     var isSuccess: Bool { code == 200 }
 }
 
-public struct NCMSongQuality: Codable {
+public struct NCMSongQuality: Codable, Equatable {
     public var br: Int
     public var fid: Int
     public var size: Int
     public var vd: Double
 }
 
-public struct NCMAlbumResponse: Codable {
-    public struct Info: Codable {
-        public struct CommentThread: Codable {
-            public struct ResourceInfo: Codable {
+public struct NCMAlbumResponse: Codable, Equatable {
+    public struct Info: Codable, Equatable {
+        public struct CommentThread: Codable, Equatable {
+            public struct ResourceInfo: Codable, Equatable {
 //                    public var creator: Any?
 //                    public var encodedId: Any?
                 public var id: Int
@@ -89,7 +89,7 @@ public struct NCMAlbumResponse: Codable {
     public var type: String?
 }
 
-public struct NCMArtistResponse: Codable {
+public struct NCMArtistResponse: Codable, Equatable {
     public var accountId: Int?
     public var albumSize: Int
     public var alias: [String]
@@ -107,7 +107,7 @@ public struct NCMArtistResponse: Codable {
     public var trans: String
 }
 
-public struct NCMCrteatorResponse: Codable {
+public struct NCMCrteatorResponse: Codable, Equatable {
     public var accountStatus: Int
     public var anchor: Bool
     public var authenticationTypes: Int
@@ -139,8 +139,8 @@ public struct NCMCrteatorResponse: Codable {
     public var userId, userType, vipType: Int
 }
 
-public struct NCMSongResponse: Codable {
-    public struct Al: Codable {
+public struct NCMSongResponse: Codable, Equatable {
+    public struct Al: Codable, Equatable {
         public var id: Int
         public var name: String?
         public var pic: Double
@@ -149,24 +149,24 @@ public struct NCMSongResponse: Codable {
         public var picStr: String?
     }
 
-    public struct Ar: Codable {
+    public struct Ar: Codable, Equatable {
         public var alias: [String]
         public var id: Int
         public var name: String?
         public var tns: [String]
     }
-    public struct NoCopyrightRcmd: Codable {
+    public struct NoCopyrightRcmd: Codable, Equatable {
     //            public var songId: Any?
         public var type: Int
         public var typeDesc: String
     }
 
-    public struct OriginSongSimpleData: Codable {
-        public struct AlbumMeta: Codable {
+    public struct OriginSongSimpleData: Codable, Equatable {
+        public struct AlbumMeta: Codable, Equatable {
             public var id: Int
             public var name: String
         }
-        public struct ArtistMeta: Codable {
+        public struct ArtistMeta: Codable, Equatable {
             public var id: Int
             public var name: String
         }
@@ -216,8 +216,8 @@ public struct NCMSongResponse: Codable {
     public var v: Int
 }
 
-public struct NCMPlaylistResponse: Codable {
-    public struct TrackId: Codable {
+public struct NCMPlaylistResponse: Codable, Equatable {
+    public struct TrackId: Codable, Equatable {
 //        public var alg: Any?
         public var at: Int
         public var id: Int
@@ -276,14 +276,14 @@ public struct NCMPlaylistResponse: Codable {
 //    public var videos: Any?
 }
 
-public struct NCMPrivilegeResponse: Codable {
-    public struct ChargeInfoList: Codable {
+public struct NCMPrivilegeResponse: Codable, Equatable {
+    public struct ChargeInfoList: Codable, Equatable {
         public var chargeMessage: String?
         public var chargeType: Int
         public var chargeUrl: String?
         public var rate: Int
     }
-    public struct FreeTrialPrivilege: Codable {
+    public struct FreeTrialPrivilege: Codable, Equatable {
         public var resConsumable: Bool
         public var userConsumable: Bool
     }

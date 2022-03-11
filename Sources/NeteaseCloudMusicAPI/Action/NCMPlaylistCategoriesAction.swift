@@ -21,7 +21,7 @@ public struct NCMPlaylistCategoriesAction: NCMAction {
 }
 
 public struct NCMPlaylistCatalogueResponse: NCMResponse {
-    public struct PlaylistCatalogue: Codable {
+    public struct PlaylistCatalogue: Codable, Equatable {
         public var activity: Bool
         public var category: Int
         public var hot: Bool
@@ -32,7 +32,7 @@ public struct NCMPlaylistCatalogueResponse: NCMResponse {
         public var resourceType: Int
         public var type: Int
     }
-//    public struct Category: Codable {
+//    public struct Category: Codable, Equatable {
 //        var _0: String
 //        var _1: String
 //        var _2: String

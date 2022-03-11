@@ -35,19 +35,19 @@ public struct NCMCommentSongAction: NCMAction {
 }
 
 public struct NCMCommentSongResponse: NCMResponse {
-    public struct User: Codable {
-        public struct AvatarDetail: Codable {
+    public struct User: Codable, Equatable {
+        public struct AvatarDetail: Codable, Equatable {
             public var identityIconUrl: String
             public var identityLevel, userType: Int
         }
-        public struct CommonIdentity: Codable {
+        public struct CommonIdentity: Codable, Equatable {
             public var bizCode: String
             public var iconUrl: String
             public var link: String
             public var target, title: String
         }
-        public struct VipRights: Codable {
-            public struct Associator: Codable {
+        public struct VipRights: Codable, Equatable {
+            public struct Associator: Codable, Equatable {
                 public var rights: Bool
                 public var vipCode: Int
             }
@@ -70,15 +70,15 @@ public struct NCMCommentSongResponse: NCMResponse {
         public var vipRights: VipRights?
         public var vipType: Int
     }
-    public struct Comment: Codable {
-        public struct BeReplied: Codable {
+    public struct Comment: Codable, Equatable {
+        public struct BeReplied: Codable, Equatable {
             public var beRepliedCommentId: Int
             public var content: String?
 //            public var expressionUrl: String?
             public var status: Int
             public var user: User
         }
-        public struct PendantData: Codable {
+        public struct PendantData: Codable, Equatable {
             public var id: Int
             public var imageUrl: String
         }

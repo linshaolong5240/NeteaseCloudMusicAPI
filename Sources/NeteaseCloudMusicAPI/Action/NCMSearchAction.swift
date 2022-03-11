@@ -51,9 +51,9 @@ public struct NCMSearchSongAction: NCMAction {
 }
 
 public struct NCMSearchSongResponse: NCMResponse {
-    public struct Result: Codable {
-        public struct Song: Codable {
-            public struct Album: Codable {
+    public struct Result: Codable, Equatable {
+        public struct Song: Codable, Equatable {
+            public struct Album: Codable, Equatable {
                 public var alia: [String]?
                 public var artist: Artist
                 public var copyrightId, id, mark: Int
@@ -61,7 +61,7 @@ public struct NCMSearchSongResponse: NCMResponse {
                 public var picId: Double
                 public var publishTime, size, status: Int
             }
-            public struct Artist: Codable {
+            public struct Artist: Codable, Equatable {
                 public var albumSize: Int
                 public var alias: [String]
                 public var id, img1v1: Int
@@ -100,9 +100,9 @@ public struct NCMSearchPlaylistAction: NCMAction {
 }
 
 public struct NCMSearchPlaylistResponse: NCMResponse {
-    public struct Result: Codable {
-        public struct Playlist: Codable {
-            public struct Creator: Codable {
+    public struct Result: Codable, Equatable {
+        public struct Playlist: Codable, Equatable {
+            public struct Creator: Codable, Equatable {
                 public var authStatus: Int
 //                public var experts, expertTags: Any?
                 public var nickname: String

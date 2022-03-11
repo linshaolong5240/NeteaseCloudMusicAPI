@@ -27,7 +27,7 @@ public struct NCMAlbumSublistAction: NCMAction {
 }
 
 public struct NCMAlbumSublistResponse: NCMResponse {
-    public struct Album: Codable {
+    public struct Album: Codable, Equatable {
         public var alias: [String]
         public var artists: [NCMArtistResponse]
         public var id: Int

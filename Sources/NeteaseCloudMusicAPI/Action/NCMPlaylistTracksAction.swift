@@ -9,7 +9,7 @@
 import Foundation
 //对歌单添加或删除歌曲
 public struct NCMPlaylistTracksAction: NCMAction {
-    public enum Option: String, Codable {
+    public enum Option: String, Codable, Equatable {
         case add
         case del
     }

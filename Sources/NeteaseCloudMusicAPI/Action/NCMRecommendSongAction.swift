@@ -20,11 +20,11 @@ public struct NCMRecommendSongAction: NCMAction {
 }
 
 public struct NCMRecommendSongsResponse: NCMResponse {
-    public struct RecommendReason: Codable {
+    public struct RecommendReason: Codable, Equatable {
         public var reason: String
         public var songId: Int
     }
-    public struct DataResponse: Codable {
+    public struct DataResponse: Codable, Equatable {
         public var dailySongs: [NCMSongResponse]
 //        public var orderSongs: [Any]
         public var recommendReasons: [RecommendReason]

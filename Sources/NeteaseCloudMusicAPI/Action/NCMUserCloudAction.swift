@@ -26,7 +26,7 @@ public struct NCMUserCloudAction: NCMAction {
 }
 
 public struct NCMUserCloudResponse: NCMResponse {
-    public struct Album: Codable {
+    public struct Album: Codable, Equatable {
         public var id: Int
         public var name: String?
         public var pic: Int
@@ -35,13 +35,13 @@ public struct NCMUserCloudResponse: NCMResponse {
 //        public var tns: [Any]
     }
 
-    public struct Artist: Codable {
+    public struct Artist: Codable, Equatable {
         public var alias: [String]
         public var id: Int
         public var name: String?
 //        var tns: [Any]
     }
-    public struct Privilege: Codable {
+    public struct Privilege: Codable, Equatable {
         public var cp: Int
         public var cs: Bool
         public var dl: Int
@@ -57,7 +57,7 @@ public struct NCMUserCloudResponse: NCMResponse {
         public var subp: Int
         public var toast: Bool
     }
-    public struct SimpleSong: Codable {
+    public struct SimpleSong: Codable, Equatable {
 //        public var a: Any?
         public var al: Album
         public var alia: [String]
@@ -99,7 +99,7 @@ public struct NCMUserCloudResponse: NCMResponse {
         public var v: Int
     }
     
-    public struct UserCloudSong: Codable {
+    public struct UserCloudSong: Codable, Equatable {
         public var addTime: Int
         public var album: String
         public var artist: String

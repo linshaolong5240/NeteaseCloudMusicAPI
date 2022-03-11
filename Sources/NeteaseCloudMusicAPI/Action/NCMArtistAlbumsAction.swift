@@ -29,7 +29,7 @@ public struct NCMArtistAlbumsAction: NCMAction {
 }
 
 public struct NCMArtistAlbumsResponse: NCMResponse {
-    public struct ArtistAlbum: Codable {
+    public struct ArtistAlbum: Codable, Equatable {
         public var alias: [String]
         public var artist: NCMArtistResponse
         public var artists: [NCMArtistResponse]
