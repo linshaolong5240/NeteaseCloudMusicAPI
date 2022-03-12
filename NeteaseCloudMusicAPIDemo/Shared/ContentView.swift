@@ -16,6 +16,10 @@ struct ContentView: View {
     @State private var disposeBag = DisposeBag()
 
     @State private var id: Int = 507712546
+    
+    init() {
+        NCM.debug = true
+    }
 
     var body: some View {
         VStack {
@@ -68,6 +72,7 @@ struct ContentView: View {
     
     func combine() {
         NCM.requestPublisher(action: NCMPlaylistDetailAction(id: id)).sink(receiveCompletion: { completion in
+//        NCM.requestPublisher(action: NCMLoginRefreshAction()).sink(receiveCompletion: { completion in
             if case .failure(let error) = completion {
                 print(error)
             }

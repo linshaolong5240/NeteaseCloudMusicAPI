@@ -20,6 +20,8 @@ public let NCM = NeteaseCloudMusicAPI.shared
 public class NeteaseCloudMusicAPI {
 
     public static let shared = NeteaseCloudMusicAPI()
+
+    public var debug: Bool = false
     
     public var requestHttpHeader = [ //"Accept": "*/*",
         //"Accept-Encoding": "gzip,deflate,sdch",
@@ -82,9 +84,9 @@ public class NeteaseCloudMusicAPI {
                                                         text.data(using: .utf8)! as CFData,
                                                         &error)
             let data = encryptData! as Data
-            #if DEBUG
-            print(error ?? "")
-            #endif
+            if debug {
+                print(error ?? "")
+            }
             return data.toHexString()
         }
         //crypto
@@ -131,7 +133,15 @@ public class NeteaseCloudMusicAPI {
     public func request<Action: NCMAction>(action: Action, completion: @escaping (Result<Action.Response?, Error>) -> Void) -> URLSessionDataTask {
         let request = makeRequest(action: action)
         
-        let task = URLSession.shared.dataTask(with: request) { responseData, response, error in
+        let task = URLSession.shared.dataTask(with: request) {[weak self] responseData, response, error in
+            if self?.debug ?? false {
+                if let data = responseData {
+                    let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any]
+                    print(json ?? "data: nil")
+                } else {
+                    print("data: nil")
+                }
+            }
             DispatchQueue.main.async {
                 guard error == nil else {
                     completion(.failure(error!))
@@ -162,25 +172,26 @@ extension NeteaseCloudMusicAPI {
     public func requestPublisher<Action: NCMAction>(action: Action) -> AnyPublisher<Action.Response, Error> {
         let request = makeRequest(action: action)
 
-        #if false
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .map {
-                let str = String(data: $0.data, encoding: .utf8)?.jsonToDictionary?.toJSONString
-                print(str ?? "data: nil")
-                return $0.data
-            }
-            .decode(type: action.responseType, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-        #else
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: action.responseType, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-        #endif
+        if debug {
+            return URLSession.shared
+                .dataTaskPublisher(for: request)
+                .map {
+                    let json = try? JSONSerialization.jsonObject(with: $0.data, options: .allowFragments) as? [String : Any]
+
+                    print(json ?? "data: nil")
+                    return $0.data
+                }
+                .decode(type: action.responseType, decoder: JSONDecoder())
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        } else {
+            return URLSession.shared
+                .dataTaskPublisher(for: request)
+                .map(\.data)
+                .decode(type: action.responseType, decoder: JSONDecoder())
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        }
     }
     
     public func uploadPublisher(action: NCMCloudUploadAction) -> AnyPublisher<NCMCloudUploadResponse, Error> {
@@ -194,24 +205,26 @@ extension NeteaseCloudMusicAPI {
         request.httpMethod = action.method.rawValue
         request.allHTTPHeaderFields = action.headers
         request.httpBody = action.data
-        #if false
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .map {
-                print(String(data: $0.data, encoding: .utf8)?.jsonToDictionary?.toJSONString)
-                return $0.data
-            }
-            .decode(type: action.responseType, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-        #else
-        return URLSession.shared
-            .dataTaskPublisher(for: request)
-            .map(\.data)
-            .decode(type: action.responseType, decoder: JSONDecoder())
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
-        #endif
+        if debug {
+            return URLSession.shared
+                .dataTaskPublisher(for: request)
+                .map {
+                    let json = try? JSONSerialization.jsonObject(with: $0.data, options: .allowFragments) as? [String : Any]
+
+                    print(json ?? "data: nil")
+                    return $0.data
+                }
+                .decode(type: action.responseType, decoder: JSONDecoder())
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        } else {
+            return URLSession.shared
+                .dataTaskPublisher(for: request)
+                .map(\.data)
+                .decode(type: action.responseType, decoder: JSONDecoder())
+                .receive(on: RunLoop.main)
+                .eraseToAnyPublisher()
+        }
     }
 }
 
